@@ -1,0 +1,227 @@
+{
+  "pv": {
+    "name": "Better Auth Architecture",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "app",
+      "type": "text",
+      "x": 0,
+      "y": 0,
+      "width": 160,
+      "height": 80,
+      "color": "#84CC16",
+      "pv": {
+        "nodeType": "Application",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "client-sdk",
+      "type": "text",
+      "x": 200,
+      "y": 0,
+      "width": 160,
+      "height": 80,
+      "color": "#8B5CF6",
+      "pv": {
+        "nodeType": "ClientSDK",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "auth-server",
+      "type": "text",
+      "x": 400,
+      "y": 0,
+      "width": 160,
+      "height": 80,
+      "color": "#EF4444",
+      "pv": {
+        "nodeType": "WebServer",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "core-framework",
+      "type": "text",
+      "x": 600,
+      "y": 0,
+      "width": 160,
+      "height": 80,
+      "color": "#3B82F6",
+      "pv": {
+        "nodeType": "CoreFramework",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "core-package",
+      "type": "text",
+      "x": 600,
+      "y": 150,
+      "width": 160,
+      "height": 80,
+      "color": "#6366F1",
+      "pv": {
+        "nodeType": "CorePackage",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "plugins",
+      "type": "text",
+      "x": 800,
+      "y": 0,
+      "width": 160,
+      "height": 80,
+      "color": "#10B981",
+      "pv": {
+        "nodeType": "Plugins",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "db-adapter",
+      "type": "text",
+      "x": 1000,
+      "y": 0,
+      "width": 160,
+      "height": 80,
+      "color": "#F59E0B",
+      "pv": {
+        "nodeType": "DatabaseAdapters",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "database",
+      "type": "text",
+      "x": 1200,
+      "y": 0,
+      "width": 160,
+      "height": 80,
+      "color": "#06B6D4",
+      "pv": {
+        "nodeType": "Database",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "framework-integration",
+      "type": "text",
+      "x": 400,
+      "y": 150,
+      "width": 160,
+      "height": 80,
+      "color": "#EC4899",
+      "pv": {
+        "nodeType": "FrameworkIntegrations",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "admin-panel",
+      "type": "text",
+      "x": 0,
+      "y": 150,
+      "width": 160,
+      "height": 80,
+      "color": "#F97316",
+      "pv": {
+        "nodeType": "AdminPanel",
+        "shape": "rectangle"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "app-to-client",
+      "fromNode": "app",
+      "toNode": "client-sdk",
+      "color": "#EC4899",
+      "label": "State Management",
+      "pv": {
+        "edgeType": "ClientSync"
+      }
+    },
+    {
+      "id": "client-to-api",
+      "fromNode": "client-sdk",
+      "toNode": "auth-server",
+      "color": "#EF4444",
+      "label": "HTTP Requests",
+      "pv": {
+        "edgeType": "APIRequest"
+      }
+    },
+    {
+      "id": "api-to-core",
+      "fromNode": "auth-server",
+      "toNode": "core-framework",
+      "color": "#3B82F6",
+      "label": "Auth Processing",
+      "pv": {
+        "edgeType": "Authentication"
+      }
+    },
+    {
+      "id": "core-to-plugins",
+      "fromNode": "core-framework",
+      "toNode": "plugins",
+      "color": "#8B5CF6",
+      "label": "Plugin Hooks",
+      "pv": {
+        "edgeType": "PluginExtension"
+      }
+    },
+    {
+      "id": "core-to-adapter",
+      "fromNode": "core-framework",
+      "toNode": "db-adapter",
+      "color": "#F59E0B",
+      "label": "Data Operations",
+      "pv": {
+        "edgeType": "DatabaseQuery"
+      }
+    },
+    {
+      "id": "adapter-to-db",
+      "fromNode": "db-adapter",
+      "toNode": "database",
+      "color": "#F59E0B",
+      "label": "SQL/NoSQL",
+      "pv": {
+        "edgeType": "DatabaseQuery"
+      }
+    },
+    {
+      "id": "framework-hook",
+      "fromNode": "framework-integration",
+      "toNode": "auth-server",
+      "color": "#06B6D4",
+      "label": "Middleware",
+      "pv": {
+        "edgeType": "FrameworkHook"
+      }
+    },
+    {
+      "id": "core-dependency",
+      "fromNode": "core-framework",
+      "toNode": "core-package",
+      "color": "#6366F1",
+      "label": "Dependencies"
+    },
+    {
+      "id": "admin-to-api",
+      "fromNode": "admin-panel",
+      "toNode": "auth-server",
+      "color": "#EF4444",
+      "label": "Admin Operations",
+      "pv": {
+        "edgeType": "APIRequest"
+      }
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+version: "1.0.0"
+name: "Better Auth Component Library"
+
+description: "Architecture components for Better Auth authentication framework"
+
+nodeComponents:
+  CoreFramework:
+    description: "Better Auth core authentication framework"
+    tags: ["core", "authentication", "security"]
+    defaultLabel: "Core Framework"
+    shape: "rectangle"
+    icon: "🔐"
+    color: "#3B82F6"
+    
+  CorePackage:
+    description: "Core authentication utilities and types"
+    tags: ["core", "utilities", "types"]
+    defaultLabel: "Core Package"
+    shape: "rectangle"
+    icon: "⚙️"
+    color: "#6366F1"
+    
+  Plugins:
+    description: "Extensible plugin system for additional features"
+    tags: ["plugins", "extensible", "features"]
+    defaultLabel: "Plugins"
+    shape: "rectangle"
+    icon: "🔌"
+    color: "#10B981"
+    
+  DatabaseAdapters:
+    description: "Database abstraction layer"
+    tags: ["database", "adapters", "persistence"]
+    defaultLabel: "Database Adapters"
+    shape: "cylinder"
+    icon: "🗄️"
+    color: "#F59E0B"
+    
+  ClientSDK:
+    description: "Client-side authentication SDK"
+    tags: ["client", "sdk", "frontend"]
+    defaultLabel: "Client SDK"
+    shape: "rectangle"
+    icon: "👤"
+    color: "#8B5CF6"
+    
+  FrameworkIntegrations:
+    description: "Framework-specific integrations"
+    tags: ["frameworks", "integrations", "middleware"]
+    defaultLabel: "Framework Integrations"
+    shape: "rectangle"
+    icon: "🔗"
+    color: "#EC4899"
+    
+  WebServer:
+    description: "API endpoints and authentication server"
+    tags: ["server", "api", "endpoints"]
+    defaultLabel: "Web Server"
+    shape: "rectangle"
+    icon: "🌐"
+    color: "#EF4444"
+    
+  Database:
+    description: "User data and session storage"
+    tags: ["database", "storage", "persistence"]
+    defaultLabel: "Database"
+    shape: "cylinder"
+    icon: "💾"
+    color: "#06B6D4"
+    
+  Application:
+    description: "End-user application consuming Better Auth"
+    tags: ["application", "frontend", "user-interface"]
+    defaultLabel: "Application"
+    shape: "rectangle"
+    icon: "🚀"
+    color: "#84CC16"
+    
+  AdminPanel:
+    description: "Administrative interface for user management"
+    tags: ["admin", "management", "interface"]
+    defaultLabel: "Admin Panel"
+    shape: "rectangle"
+    icon: "👨‍💼"
+    color: "#F97316"
+
+edgeComponents:
+  Authentication:
+    description: "User authentication flow"
+    tags: ["authentication", "flow", "security"]
+    label: "Authentication"
+    color: "#3B82F6"
+    
+  SessionManagement:
+    description: "Session creation and validation"
+    tags: ["session", "management", "state"]
+    label: "Session Management"
+    color: "#10B981"
+    
+  PluginExtension:
+    description: "Plugin system extension points"
+    tags: ["plugins", "extension", "hooks"]
+    label: "Plugin Extension"
+    color: "#8B5CF6"
+    
+  DatabaseQuery:
+    description: "Database operations through adapters"
+    tags: ["database", "query", "operations"]
+    label: "Database Query"
+    color: "#F59E0B"
+    
+  ClientSync:
+    description: "Client-server session synchronization"
+    tags: ["client", "server", "sync"]
+    label: "Client Sync"
+    color: "#EC4899"
+    
+  APIRequest:
+    description: "HTTP API calls to auth endpoints"
+    tags: ["api", "http", "request"]
+    label: "API Request"
+    color: "#EF4444"
+    
+  FrameworkHook:
+    description: "Framework-specific integration hooks"
+    tags: ["framework", "hooks", "integration"]
+    label: "Framework Hook"
+    color: "#06B6D4"
