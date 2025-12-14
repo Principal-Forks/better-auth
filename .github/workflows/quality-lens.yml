@@ -2,9 +2,10 @@ name: Quality Lens Analysis
 
 on:
   push:
-    branches: [main]
+    branches: [main, canary]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   analyze:
